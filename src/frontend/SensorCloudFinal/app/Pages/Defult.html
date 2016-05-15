@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="../BootStrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="../css/dashboard.css" rel="stylesheet">
+    <!--HighChart-->
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--Maps-->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?"></script>
+
+
+
+</head>
+
+<body ng-app="CSwitch" ng-cloak> <!-- onload="checkLoggedIn()"
+
+
+
+<div id="container"></div>
+
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: skyblue ">
+    <div class="container">
+        <div class="navbar-header" >
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#Dashboard">Environment Sensor Service</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="#Dashboard" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="btn dropclose"  type="button" onmouseenter="myFunction()" data-toggle="dropdown">Account<span class="caret" data-toggle="dropdown"></span></a></li>
+            </ul>
+
+            <ul class="dropdown-menu pull-right" id="myDropdown">
+                <li><a class="btn" onclick="myFunction()" href="#Profile">Profile</a></li>
+                <li><a class="btn" onclick="myFunction()" href="#Subscription">Subscriptions</a></li>
+                <li><a class="btn" onclick="myFunction()"  href="#Billing">Billing</a></li>
+                <li><a class="btn" onclick="deleteAllCookies()" href="Login.html">Logout</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container-fluid">
+
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar" >
+                <li><a class="active" href="#Dashboard" >Dashboard<span class="sr-only">(current)</span></a></li>
+                <li><a href="#SensorManagement">Sensor Management</a></li>
+                <li><a href="#Reports">Reports</a></li>
+                 <li><a href="#Maps">Location</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+<!---------->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <ng-view  ></ng-view>
+
+</div>
+<!------------->
+
+
+
+<script>
+        function myFunction() {
+        document.getElementById("myDropdown"). classList.toggle("show");
+        }
+
+
+</script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-cookies.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+<script src="../js/Controllers/CSwitch.js"></script>
+<script src="../bower_components/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-1.3.2.js"></script>
+<script src="../bower_components/ui-bootstrap-custom-build/ui-bootstrap-custom-tpls-1.3.2.min.js"></script>
+<script src="../bower_components/ui-bootstrap-custom-build/ui-bootstrap-custom-1.3.2.js"></script>
+<script src="../bower_components/ui-bootstrap-custom-build/ui-bootstrap-custom-1.3.2.min.js"></script>
+
+
+<script type="text/javascript">
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+
+        //Getting cookie
+    /*function checkLoggedIn() {
+        console.log(document.cookie);
+        var name =  'loggedIn=';
+        var ca = document.cookie.split(';');
+        console.log(ca);
+        if(ca[0].length==0){
+            window.alert("Hey Whaat!! Login Sissy");
+        }
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') {
+                c = c.substring(1);
+            }
+                console.log(c);
+            if (c.indexOf(name) == 0) {
+                if(c.substring(name.length,c.length)=='true')
+                    document.getElementsByTagName("body")[0].removeAttribute("hidden");
+                else
+                window.alert("Hey!! Did you Login??");
+            }
+        }
+        return "";
+    }*/
+    function deleteAllCookies() {
+        var cookies = document.cookie.split(";");
+
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+    }
+</script>
+<!--For HighCharts-->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+
+</body>
+</html>

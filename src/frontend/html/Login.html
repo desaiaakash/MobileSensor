@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8" />
+    <title>Sensor Cloud Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Le styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet" data-semver="3.3.6" data-require="bootstrap-css" />
+    <style type="text/css">
+        body { background-color: silver !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    </style>
+
+    <link href="style.css" rel="stylesheet" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    <link href="images/favicon.ico" rel="shortcut icon" />
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+    <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+    <!-- Le javascript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" data-semver="2.2.0" data-require="jquery"></script>
+    <script src="../js/script.js"></script>
+</head>
+
+<body>
+<div class="page-header">
+    <h1>Welcome to Sensor Cloud Portal</h1>
+</div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-0">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Login</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="User_id or Email" name="UserId" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="remember" type="checkbox" value="Remember Me">Remember me
+                                </label>
+                            </div>
+                            <button onclick="check(this.form)" class="btn btn-lg btn-primary">Sign In</button>
+                            </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Sign Up</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="First Name" name="FName" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Last Name" name="LName" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="UserId" name="Uid" type="text" autofocus>
+                                </div>
+                                <input class="form-control" placeholder="Password" name="upassword" type="password" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Confirm Password" name="cpassword" type="password" autofocus>
+                            </div>
+
+                            <button onclick="validate(this.form)" class="btn btn-lg btn-success btn-block">Sign Up</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

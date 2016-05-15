@@ -1,0 +1,6 @@
+#temp-level-container, #water-level-container{
+    height: 400px;
+    min-width: 310px;
+    max-width: 900px;
+    margin: 50px auto;
+}

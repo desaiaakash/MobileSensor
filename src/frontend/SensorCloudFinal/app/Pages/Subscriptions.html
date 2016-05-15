@@ -1,0 +1,33 @@
+
+<h3>Sensor Subscriptions</h3>
+<table class="table table-hover" align="center">
+    <tr>
+        <td>SensorID</td>
+        <td>Location</td>
+        <td>Type</td>
+        <td>Typecode</td>
+        <td>Cost/hr</td>
+        <td>Hours Consumed</td>
+        <td>Status</td>
+        <td>Date Added</td>
+        <td>Date Removed</td>
+    </tr>
+    <!--  <tr ng-if="lists.typecode === 1" ng-repeat = "lists in list">  -->
+    <tr ng-repeat = "lists in list">
+        <td>{{lists.sensorid}}</td>
+        <td>{{lists.location}}</td>
+        <td>{{lists.type}}</td>
+        <td>{{lists.typecode}}</td>
+        <td>{{lists.cost}}</td>
+        <td>{{lists.hoursConsumed}}</td>
+        <td>{{lists.status}}</td>
+        <td>{{lists.created_date}}</td>
+        <td>{{lists.end_date}}</td>
+
+
+
+    </tr>
+</table>
+<hr>
+
+</div>

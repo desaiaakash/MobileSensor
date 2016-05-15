@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Pulkit">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Cloud Sensor SignUp</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../BootStrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/signin.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="LoginApp">
+
+<div class="container" ng-controller="SignUpController as SignCtrl">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: skyblue">
+        <div class="container">
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Environment Sensor Service</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">SignUp<span class="sr-only">(current)</span></a></li>
+                    <li><a href="Login.html">Login </a></li>
+
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+    <!--Sign Un Form Module-->
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please, Sign Up Below</h2>
+        <label  class="sr-only">UserName</label>
+        <input type="text" id="uName" class="form-control" placeholder="Your UserName?" required autofocus ng-model="user.uName">
+        <br/>
+        <label  class="sr-only">Password</label>
+        <input type="password" id="uPassword" class="form-control" placeholder="Password" required ng-model="user.pass">
+        <label  class="sr-only">Password</label>
+        <input type="password"  class="form-control" id="passwordConfirm" placeholder="Please Confirm Password" required oninput="check(this)" >
+        <script language='javascript' type='text/javascript'>
+            function check(input) {
+                if (input.value != document.getElementById('uPassword').value) {
+                    input.setCustomValidity('Password Must be Matching.');
+                } else {
+                    // input is valid -- reset the error message
+                    input.setCustomValidity('');
+                }
+            }
+        </script>
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="signUp()">Sign Up</button>
+        {{SignCtrl.errMsg}}
+    </form>
+
+</div> <!-- /container -->
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<!--<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>-->
+<script src="../js/Controllers/LogCtrl.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-cookies.js"></script>
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+</body>
+</html>
